@@ -2,8 +2,8 @@
 title: "LSA-T: The First Continuous Argentinian Sign Language Dataset for Sign Language Translation"
 description: >
   LSA-T is the first continuous Argentinian Sign Language (LSA) dataset. It contains ~22 hs of video extracted from the CN Sordos YouTube channel with Spanish subtitles, joints for each signer, and the inferred signer if there is more than one person in a clip. Videos are in 30 FPS full HD (1920x1080). We've also developed https://app.seni.ar, a platform for exploring, validating, and augmenting LSA-T.
-pubDate: "Jan 04 2023"
-heroImage: "/assets/AlphaPose.gif"
+pubDate: "Nov 23 2022"
+heroImage: "/assets/lsat.gif"
 badge: "Conference paper"
 tags: ["Computer Vision", "Dataset", "Deep Learning", "LSA-T", "Sign Language Translation"]
 authors: ["Pedro Dal Bianco", "Gastón Ríos", "Franco Ronchetti", "Facundo Quiroga", "Oscar Stanchi", "Waldo Hasperué", "Alejandro Rosete"]

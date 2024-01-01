@@ -3,69 +3,52 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
 
-const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const publications = (await getCollection("publications")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
-const last_posts = posts.slice(0, 3);
+const last_publications = publications.slice(0, 3);
 ---
 
 <BaseLayout sideBarActiveItemID="home">
   <div class="pb-12 mt-5">
-    <!-- <div class="text-xl py-1">Hey there 👋</div> -->
     <div class="text-5xl font-bold">Pedro Dal Bianco</div>
-    <div class="text-3xl py-3 font-bold">PhD candidate in Computer Science and Artificial Intelligence.</div>
+    <div class="text-3xl py-3 font-bold">PhD candidate in Deep Learning and AI.</div>
     <div class="py-2">
       <text class="text-lg">
-        I'm a Doctoral intern regarding Deep Learning and Artificial Intelligence. During my PhD, I've studied the fundamentals and also the latest techniques on Deep Learning and carried on Deep Learning projects from the scratch. This goes from collecting important amounts of noisy unstructured data, cleaning and preprocessing it to use it to train state-of-the-art models and evaluate them.
-        I'm currently working on the development and training of AI models for automatic LSA video translation. I'm training these models on the LSA-T dataset (https://midusi.github.io/LSA-T/), that I've also developed.
+        I'm a Doctoral intern at <a href="https://weblidi.info.unlp.edu.ar/en/" class="link">III-LIDI</a> on the fields of Deep Learning and AI applied to Sign Language Translation (SLT).
+        During my PhD, I've developed the <a href="https://midusi.github.io/LSA-T/" class="link">LSA-T dataset</a>, the first large-scale dataset for LSA video translation and also been part of the creation of <a href="https://app.seni.ar" class="link">Seni.ar</a>, a platform for exploring and collaborating via crowdsourcing with LSA-T.
+        Now, I'm focused on the development and training of neural SLT models over LSA-T and other databases.
       </text>
     </div>
-    <div class="mt-8">
-      <a class="btn" href="https://twitter.com/manuelernestog" target="_blank"> Let's connect!</a>
-      <a href="https://github.com/manuelernestog/astrofy" target="_blank" class="btn btn-outline ml-5">
-        Get This template
-      </a>
+    <div class="py-2">
+      <text class="text-lg">
+        I also work as Lead AI/ML Instructor at <a href="https://anyoneai.com" class="link">Anyone AI</a>, and as a Graduate Teaching Assistant at <i>Computing Theory and Program Verification</i> at <a href="https://www.info.unlp.edu.ar" class="link">Facultad de Informática - UNLP</a>.
+      </text>
     </div>
   </div>
 
   <div>
-    <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
+    <div class="text-3xl w-full font-bold mb-2">Projects</div>
   </div>
 
   <HorizontalCard
-    title="Demo Project 1"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
+    title="Seni.ar"
+    img="/assets/seniar.gif"
+    desc="Platform designed for the validation and expansion of the LSA-T database through crowdsourcing and the collaboration of SL experts."
+    url="https://app.seni.ar"
   />
 
   <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
+    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest publications</div>
   </div>
 
   {
-    last_posts.map((post) => (
+    last_publications.map((post) => (
       <>
         <HorizontalCard
           title={post.data.title}
           img={post.data.heroImage}
           desc={post.data.description}
-          url={"/blog/" + post.slug}
+          url={"/publications/" + post.slug}
           target="_self"
           badge={post.data.badge}
         />

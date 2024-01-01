@@ -44,7 +44,7 @@ npm run dev
 │   │   └── SideBarMenu.astro
 │   │   └── SideBarFooter.astro
 │   ├── content/
-│   │   ├── blog/
+│   │   ├── publications/
 │   │   │   ├── post1.md
 │   │   │   ├── post2.md
 │   │   │   └── post3.md
@@ -55,7 +55,7 @@ npm run dev
 │   │   └── BaseLayout.astro
 │   │   └── PostLayout.astro
 │   └── pages/
-│   │   ├── blog/
+│   │   ├── publications/
 │   │   │   ├── [...page].astro
 │   │   │   ├── [slug].astro
 │   │   └── cv.astro
@@ -175,9 +175,9 @@ You can add a [content collection](https://docs.astro.build/en/guides/content-co
 
 Where you need to define your content collections, we define our content schemas too.
 
-#### Blog
+#### Publications
 
-Add your `md` blog post in the `/content/blog/` folder.
+Add your `md` blog post in the `/content/publications/` folder.
 
 ##### Post format
 
