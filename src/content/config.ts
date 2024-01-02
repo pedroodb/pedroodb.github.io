@@ -1,5 +1,5 @@
 import { z, defineCollection } from "astro:content";
-const blogSchema = z.object({
+const publicationsSchema = z.object({
     title: z.string(),
     description: z.string(),
     pubDate: z.coerce.date(),
@@ -14,26 +14,26 @@ const blogSchema = z.object({
     }).optional(),
 });
 
-const storeSchema = z.object({
-    title: z.string(),
-    description: z.string(),
-    custom_link_label: z.string(),
-    custom_link: z.string().optional(),
-    updatedDate: z.coerce.date(),
-    pricing: z.string().optional(),
-    oldPricing: z.string().optional(),
-    badge: z.string().optional(),
-    checkoutUrl: z.string().optional(),
-    heroImage: z.string().optional(),
-});
+// const storeSchema = z.object({
+//     title: z.string(),
+//     description: z.string(),
+//     custom_link_label: z.string(),
+//     custom_link: z.string().optional(),
+//     updatedDate: z.coerce.date(),
+//     pricing: z.string().optional(),
+//     oldPricing: z.string().optional(),
+//     badge: z.string().optional(),
+//     checkoutUrl: z.string().optional(),
+//     heroImage: z.string().optional(),
+// });
 
-export type BlogSchema = z.infer<typeof blogSchema>;
-export type StoreSchema = z.infer<typeof storeSchema>;
+export type PublicationsSchema = z.infer<typeof publicationsSchema>;
+// export type StoreSchema = z.infer<typeof storeSchema>;
 
-const blogCollection = defineCollection({ schema: blogSchema });
-const storeCollection = defineCollection({ schema: storeSchema });
+const publicationsCollection = defineCollection({ schema: publicationsSchema });
+// const storeCollection = defineCollection({ schema: storeSchema });
 
 export const collections = {
-    'blog': blogCollection,
-    'store': storeCollection
+    'publications': publicationsCollection,
+    // 'store': storeCollection
 }
